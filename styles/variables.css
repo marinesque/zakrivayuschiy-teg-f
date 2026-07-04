@@ -8,13 +8,12 @@
     --block-width: clamp(375px, 30.5vw + 260px, 700px);
     --block-height: clamp(327px, 4.2vw + 200px, 368px);
     --block-background-color: #FFFFFF;
+    --block-background-inverse-color: #000000;
     --block-border-color: #000000;
     --font-weight-card-title: 700;
     
-    --svg-heart-contour-color: #000000;
-    --svg-heart-main-body-color: #FF0000;
-    --svg-heart-sparks-color: #FF0000;
-    --svg-heart-core-color: #000000;
+    --svg-heart-color: #000000;
+    --svg-heart-like-color: #FF0000;
 
     --svg-contour-color: #000;
     --svg-animation-fill-color: red;

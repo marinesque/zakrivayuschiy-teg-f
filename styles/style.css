@@ -93,7 +93,7 @@
 
 .card__image-corner {
   position: absolute;
-  inset-block-start: 25px;
+  inset-block-start: 32px;
   inset-inline-end: 25px;
   font-family: var(--font-family-accent);
   font-size: 14px;
@@ -155,7 +155,7 @@
 .card__like-button {
   position: relative;
   background-color: var(--block-background-color);
-  --border: 2px solid var(--block-border-color);
+  border: 2px solid var(--block-border-color);
   padding: 10px 16px;
   font-family: var(--font-family-accent);
   font-size: 14px;
@@ -183,7 +183,20 @@
 }
 
 .card__like-button:hover {
-  color: #fff;
+  color: var(--block-background-color);
+}
+
+.card__like-button.is-liked {
+  color: var(--block-background-inverse-color);
+  background-color: var(--block-background-color);
+}
+
+.card__like-button.is-liked:hover {
+  color: var(--block-background-color);
+}
+
+.card__like-button.is-liked:hover::before {
+  width: 100%;
 }
 
 .button__text {
@@ -200,7 +213,7 @@
 }
 
 .like-icon .contour {
-  fill: #000;
+  fill: var(--svg-heart-color);
   transition: fill 0.3s ease;
 }
 
@@ -222,19 +235,19 @@
 .like-icon:hover .contour,
 .like-icon:hover .core,
 .like-icon:hover .main-body {
-  fill: #000;
+  fill: var(--svg-heart-color);
 }
 
 .like-icon:active .contour,
 .like-icon:active .core,
 .like-icon:active .main-body {
-  fill: red;
+  fill: var(--svg-heart-like-color);
 }
 
 .like-icon.is-liked .contour,
 .like-icon.is-liked .core,
 .like-icon.is-liked .main-body {
-  fill: red;
+  fill: var(--svg-heart-like-color);
 }
 
 .like-icon.is-liked .sparks {
