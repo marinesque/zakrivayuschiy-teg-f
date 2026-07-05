@@ -11,27 +11,26 @@
 */
 
 @keyframes heart-scale {
-
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.25);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
+/* А для sparks оставьте как есть */
 @keyframes sparks-fade {
-
-    from {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

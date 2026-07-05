@@ -12,7 +12,8 @@
     --block-border-color: #000000;
     --font-weight-card-title: 700;
     
-    --svg-heart-color: #000000;
+    --svg-heart-body-color: #FFFFFF;
+    --svg-heart-border-color: #000000;
     --svg-heart-like-color: #FF0000;
 
     --svg-contour-color: #000;
