@@ -23,6 +23,14 @@
   align-items: center;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* центрирование по горизонтали */
+  justify-content: center;  /* центрирование по вертикали */
+  width: 100%;
+}
+
 .header {
   display: flex;
   block-size: var(--block-height);
@@ -128,7 +136,7 @@
 
 .card__text {
   font-size: 18px;
-  line-height: 117%;
+  line-height: 21px;
 }
 
 .card__button-wrapper {
@@ -220,6 +228,194 @@
     display: none;
   }
 }
+
+/* ===== Кнопка "Сохранить на память" ===== */
+.save-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-family: var(--font-family-accent);
+  border: 2px solid var(--block-border-color);
+  background-color: var(--block-background-color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  margin-block-start: 50px;
+  margin-block-end: 100px;
+}
+
+.save-button:focus {
+  outline: none;
+}
+
+.save-button:focus-visible {
+  box-shadow: 2px 2px var(--block-border-color);
+}
+
+/* Заливка при наведении для десктопа */
+@media (hover: hover) {
+  .save-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--block-border-color);
+    transition: width 0.4s ease;
+    z-index: 0;
+  }
+
+  .save-button:hover::before {
+    width: 100%;
+  }
+
+  .save-button:hover .button__text,
+  .save-button:hover .floppy-icon {
+    color: var(--block-background-color);
+  }
+}
+
+/* Для мобильных */
+@media (hover: none) {
+  .save-button::before {
+    display: none;
+  }
+}
+
+.save-button .button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--block-border-color);
+}
+
+.floppy-icon {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  color: var(--block-border-color);
+  flex-shrink: 0;
+}
+
+/* ===== Диалоговое окно ===== */
+.dialog {
+  border: 2px solid var(--block-border-color);
+  background-color: var(--block-background-color);
+  padding: 30px;
+  max-width: 353px;
+  width: 100%;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-block-end: 30px;
+}
+
+.dialog .floppy-icon {
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  color: var(--block-border-color);
+  mix-blend-mode: difference;
+}
+
+.dialog__title {
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: var(--block-border-color);
+  max-width: 234px;
+}
+
+.dialog__close-button {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  border: 2px solid var(--block-border-color);
+  background-color: var(--block-background-color);
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.dialog__close-button:focus {
+  outline: none;
+}
+
+.dialog__close-button:focus-visible {
+  box-shadow: 2px 2px var(--block-border-color);
+}
+
+.dialog__close-button .button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--block-border-color);
+}
+
+/* Заливка для кнопки "ок" */
+@media (hover: hover) {
+  .dialog__close-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--block-border-color);
+    transition: width 0.4s ease;
+    z-index: 0;
+  }
+
+  .dialog__close-button:hover::before {
+    width: 100%;
+  }
+
+  .dialog__close-button:hover .button__text {
+    color: var(--block-background-color);
+  }
+}
+
+@media (hover: none) {
+  .dialog__close-button::before {
+    display: none;
+  }
+}
+
+/* ===== Мобильная адаптация ===== */
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+
+  .save-button .floppy-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog {
+    padding-inline: 40px;
+  }
+}
+
 
 /*Анимация лайка*/
 .like-icon .contour {
