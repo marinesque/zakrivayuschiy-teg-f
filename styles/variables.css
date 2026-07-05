@@ -5,8 +5,12 @@
     --font-weight-basic: 410;
     --font-size-title: clamp(49px, 1.5vw + 43.5px, 65px);
     --font-size-subtitle: clamp(14px, 0.85vw + 10.8px, 23px);
-    --block-width: clamp(375px, 30.5vw + 260px, 700px);
-    --block-height: clamp(327px, 4.2vw + 200px, 368px);
+    /*--block-width: clamp(375px, 30.5vw + 260px, 700px);
+    --block-height: clamp(327px, 4.2vw + 200px, 368px);*/
+    
+    --block-height: clamp(20.4375rem, 19.2727rem + 4.9697vw, 23rem);
+    --block-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+    
     --block-background-color: #FFFFFF;
     --block-background-inverse-color: #000000;
     --block-border-color: #000000;
@@ -16,10 +20,6 @@
     --svg-heart-border-color: #000000;
     --svg-heart-like-color: #FF0000;
 
-    --svg-contour-color: #000;
-    --svg-animation-fill-color: red;
-    --header-block-padding: clamp(7.625rem, 7.4115rem + 0.9108vw, 8.125rem);
-    --header-inline-padding: clamp(1rem, -1.3322rem + 12.1643vw, 7.6563rem);
     --background-gradient: 
       repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
       repeating-linear-gradient(to bottom,#d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),

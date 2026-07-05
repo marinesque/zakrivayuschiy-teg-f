@@ -21,13 +21,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* центрирование по горизонтали */
-  justify-content: center;  /* центрирование по вертикали */
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -229,7 +230,6 @@
   }
 }
 
-/* ===== Кнопка "Сохранить на память" ===== */
 .save-button {
   display: flex;
   flex-direction: column;
@@ -249,6 +249,12 @@
   margin-block-end: 100px;
 }
 
+@media (width > 600px) {
+  .save-button {
+    flex-direction: row;
+  }
+}
+
 .save-button:focus {
   outline: none;
 }
@@ -257,7 +263,6 @@
   box-shadow: 2px 2px var(--block-border-color);
 }
 
-/* Заливка при наведении для десктопа */
 @media (hover: hover) {
   .save-button::before {
     content: '';
@@ -281,7 +286,6 @@
   }
 }
 
-/* Для мобильных */
 @media (hover: none) {
   .save-button::before {
     display: none;
@@ -296,14 +300,14 @@
 
 .floppy-icon {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  display: block;
   width: 28px;
   height: 28px;
   color: var(--block-border-color);
   flex-shrink: 0;
 }
 
-/* ===== Диалоговое окно ===== */
 .dialog {
   border: 2px solid var(--block-border-color);
   background-color: var(--block-background-color);
@@ -328,7 +332,6 @@
   width: 39px;
   height: 39px;
   color: var(--block-border-color);
-  mix-blend-mode: difference;
 }
 
 .dialog__title {
@@ -370,7 +373,6 @@
   color: var(--block-border-color);
 }
 
-/* Заливка для кнопки "ок" */
 @media (hover: hover) {
   .dialog__close-button::before {
     content: '';
@@ -399,7 +401,6 @@
   }
 }
 
-/* ===== Мобильная адаптация ===== */
 @media (width <= 375px) {
   .save-button {
     flex-direction: column;
@@ -433,7 +434,6 @@
   transition: fill 0.3s linear 0.03s;
 }
 
-/* Hover состояния (без is-liked) */
 .like-icon:hover .contour {
   fill: var(--svg-heart-border-color);
 }
@@ -448,7 +448,6 @@
   transition: fill 0.3s linear 0.05s;
 }
 
-/* Active состояния (без is-liked) */
 .like-icon:active .contour {
   fill: var(--svg-heart-like-color);
 }
@@ -463,7 +462,6 @@
   transition: fill 0.3s linear 0.04s;
 }
 
-/* is-liked состояния - все красное */
 .like-icon.is-liked .contour {
   fill: var(--svg-heart-like-color);
   transition: fill 0.6s linear 0.03s;
@@ -484,7 +482,39 @@
   animation: sparks-fade 0.3s ease-in 0.3s forwards;
 }
 
-/* Базовое состояние sparks */
 .sparks {
   opacity: 0;
+}
+
+/*Фильтры для картинок*/
+.filter-saturate {
+  filter: saturate(20%);
+}
+
+.filter-opacity {
+  filter: opacity(0.4);
+}
+
+.filter-blur {
+  filter: blur(3px);
+}
+
+.filter-grayscale {
+  filter: grayscale(80%);
+}
+
+.filter-sepia {
+  filter: sepia(0.6);
+}
+
+.filter-contrast {
+  filter: contrast(3);
+}
+
+.filter-invert {
+  filter: invert(100%);
+}
+
+.filter-combination {
+  filter: sepia(0.5) blur(3px) saturate(50%);
 }
