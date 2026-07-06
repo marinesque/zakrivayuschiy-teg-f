@@ -92,6 +92,7 @@
   line-height: 0;
   font-size: 0;
   width: 100%;
+  height: 100%;
 }
 
 .card__image {
@@ -100,6 +101,8 @@
   display: block;
   margin: 0;
   padding: 0;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__image-corner {
@@ -169,13 +172,7 @@
   outline-offset: -2px;
 }
 
-.card__like-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  block-size: 38px;
-  inline-size: 130px;
-  padding: 0;
+.button {
   position: relative;
   font-size: 14px;
   line-height: 90%;
@@ -185,13 +182,16 @@
   overflow: hidden;
   transition: box-shadow 0.3s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px var(--block-border-color);
 }
 
@@ -202,7 +202,7 @@
 }
 
 @media (hover: hover) {
-  .card__like-button::before {
+  .button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -214,36 +214,36 @@
     z-index: 0;
   }
 
-  .card__like-button:hover::before {
+  .button:hover::before {
     width: 100%;
   }
 
-  .card__like-button:hover .button__text {
+  .button:hover .button__text {
     color: var(--block-background-color);
   }
 }
 
 @media (hover: none) {
-  .card__like-button::before {
+  .button::before {
     display: none;
   }
 }
 
+.button .button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--block-border-color);
+}
+
+.card__like-button {
+  block-size: 38px;
+  inline-size: 130px;
+}
+
 .save-button {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 6px;
   padding: 16px 18px;
-  font-size: 14px;
-  font-family: var(--font-family-accent);
-  border: 2px solid var(--block-border-color);
-  background-color: var(--block-background-color);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.3s;
   margin-block-start: 50px;
   margin-block-end: 100px;
 }
@@ -254,47 +254,10 @@
   }
 }
 
-.save-button:focus {
-  outline: none;
-}
-
-.save-button:focus-visible {
-  box-shadow: 2px 2px var(--block-border-color);
-}
-
 @media (hover: hover) {
-  .save-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--block-border-color);
-    transition: width 0.4s ease;
-    z-index: 0;
-  }
-
-  .save-button:hover::before {
-    width: 100%;
-  }
-
-  .save-button:hover .button__text,
   .save-button:hover .floppy-icon {
     color: var(--block-background-color);
   }
-}
-
-@media (hover: none) {
-  .save-button::before {
-    display: none;
-  }
-}
-
-.save-button .button__text {
-  position: relative;
-  z-index: 1;
-  color: var(--block-border-color);
 }
 
 .floppy-icon {
@@ -343,61 +306,9 @@
 }
 
 .dialog__close-button {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-family-accent);
-  font-size: 14px;
-  border: 2px solid var(--block-border-color);
-  background-color: var(--block-background-color);
-  padding: 12px;
-  width: 100%;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
-}
-
-.dialog__close-button:focus {
-  outline: none;
-}
-
-.dialog__close-button:focus-visible {
-  box-shadow: 2px 2px var(--block-border-color);
-}
-
-.dialog__close-button .button__text {
-  position: relative;
-  z-index: 1;
-  color: var(--block-border-color);
-}
-
-@media (hover: hover) {
-  .dialog__close-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--block-border-color);
-    transition: width 0.4s ease;
-    z-index: 0;
-  }
-
-  .dialog__close-button:hover::before {
-    width: 100%;
-  }
-
-  .dialog__close-button:hover .button__text {
-    color: var(--block-background-color);
-  }
-}
-
-@media (hover: none) {
-  .dialog__close-button::before {
-    display: none;
-  }
+  padding-block: 11px;
+  inline-size: 100%;
+  text-transform: uppercase;
 }
 
 @media (width <= 375px) {
@@ -415,7 +326,6 @@
     padding-inline: 40px;
   }
 }
-
 
 /*Анимация лайка*/
 .like-icon .contour {

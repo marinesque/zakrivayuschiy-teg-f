@@ -1,8 +1,9 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --font-family-basic: 'Inter', sans-serif;
-    --font-family-accent: 'PressStart2P', sans-serif;
+    --font-family-accent: 'PressStart2P', fantasy;
     --font-weight-basic: 410;
+    --font-weight-card-title: 715;
     --font-size-title: clamp(49px, 1.5vw + 43.5px, 65px);
     --font-size-subtitle: clamp(14px, 0.85vw + 10.8px, 23px);
     /*--block-width: clamp(375px, 30.5vw + 260px, 700px);
@@ -14,7 +15,6 @@
     --block-background-color: #FFFFFF;
     --block-background-inverse-color: #000000;
     --block-border-color: #000000;
-    --font-weight-card-title: 700;
     
     --svg-heart-body-color: #FFFFFF;
     --svg-heart-border-color: #000000;
