@@ -278,6 +278,17 @@
   width: 100%;
 }
 
+.dialog[open] {
+  position: fixed;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  gap: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
 }
@@ -312,18 +323,14 @@
 }
 
 @media (width <= 375px) {
-  .save-button {
-    flex-direction: column;
-    padding: 16px 20px;
-  }
-
   .save-button .floppy-icon {
     width: 28px;
     height: 28px;
   }
 
-  .dialog {
+  .dialog[open] {
     padding-inline: 40px;
+    max-width: 90%;
   }
 }
 
