@@ -161,6 +161,16 @@
   border: none;
   cursor: pointer;
   flex-shrink: 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--block-border-color, #000000);
 }
 
 .button {
@@ -170,12 +180,14 @@
   font-family: var(--font-family-accent, 'PressStart2P', fantasy);
   border: 2px solid var(--block-border-color, #000000);
   background-color: var(--block-background-color, #FFFFFF);
+  color: var(--block-border-color, #FFFFFF);
   overflow: hidden;
   transition: box-shadow 0.3s;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
 }
 
 .button:focus {
@@ -191,8 +203,9 @@
 .button .floppy-icon {
   position: relative;
   z-index: 1;
-  color: var(--block-border-color, #000000);
   transition: color 0.4s ease;
+  color: var(--block-background-color, #FFFFFF);
+  mix-blend-mode: difference;
 }
 
 @media (hover: hover) {
@@ -211,24 +224,12 @@
   .button:hover::before {
     width: 100%;
   }
-
-  .button:hover .button__text,
-  .button:hover .floppy-icon {
-    color: var(--block-background-color, #FFFFFF);
-    mix-blend-mode: difference;
-  }
 }
 
 @media (hover: none) {
   .button::before {
     display: none;
   }
-}
-
-.button .button__text {
-  position: relative;
-  z-index: 1;
-  color: var(--block-border-color, #000000);
 }
 
 .card__like-button {
